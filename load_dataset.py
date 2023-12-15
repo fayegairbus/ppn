@@ -1,5 +1,6 @@
 import json
 import os
+import pickle
 from typing import *
 
 import pandas as pd
@@ -84,6 +85,14 @@ def load_notrepays():
         languages = [languages]
     docs = load_from_folder("oupn_data/2023/11/09/notrepays.today/", languages=languages)
     return convert_json_list_to_pandas(docs)
+
+def load_regular_fr():
+    return pickle.load(open("regular_data/regular_ukraine_FR.pkl", "rb"))
+
+def load_regular_en():
+    return pickle.load(open("regular_data/regular_ukraine_EN.pkl", "rb"))
+
+
 
 def load_oupn(languages: List[str] = ["ar", 'de', "en", "es", "fr", "it", "ua", "ru", "zh"]):
     if type(languages) == str:
