@@ -1,4 +1,4 @@
-# PPN : Observably Unreliable Pseudo-News dataset
+# PPN : Propagandist Pseudo-News dataset
 
 In parallel with the recent Ukraine special operation, an additional information warfare has been developped on the internet. To this end, several websites were created with the main intent to polarize and destabilize occidental countries.
 
