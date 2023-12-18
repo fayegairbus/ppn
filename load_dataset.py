@@ -54,20 +54,20 @@ def load_from_folder_tribunal_ukraine(folder: str, languages: List[str] = ['de',
 def load_rrn(languages: List[str] = ["ar", 'de', "en", "es", "fr", "it", "ua", "ru", "zh"]):
     if type(languages) == str:
         languages = [languages]
-    docs = load_from_folder("oupn_data/2023/09/13/rrn.media/", languages=languages)
+    docs = load_from_folder("ppn_data/2023/09/13/rrn.media/", languages=languages)
     return convert_json_list_to_pandas(docs)
 
 def load_tribunalukraine(languages: List[str] = ['de', "en", "es", "fr", "ru"]):
     # Language identification is broken for this dataset
     if type(languages) == str:
         languages = [languages]
-    docs = load_from_folder_tribunal_ukraine("oupn_data/2023/11/09/tribunalukraine.info/", languages=languages)
+    docs = load_from_folder_tribunal_ukraine("ppn_data/2023/11/09/tribunalukraine.info/", languages=languages)
     return convert_json_list_to_pandas(docs)
 
 def load_waronfakes(languages: List[str] = ["ar", 'de', "en", "es", "fr", "zh"]):
     if type(languages) == str:
         languages = [languages]
-    docs = load_from_folder("oupn_data/2023/11/09/waronfakes.com/", languages=languages)
+    docs = load_from_folder("ppn_data/2023/11/09/waronfakes.com/", languages=languages)
     return convert_json_list_to_pandas(docs)
 
 def load_lavirgule():
@@ -75,7 +75,7 @@ def load_lavirgule():
     languages = ["ar", 'de', "en", "es", "fr", "it", "ua", "ru", "zh"]
     if type(languages) == str:
         languages = [languages]
-    docs = load_from_folder("oupn_data/2023/11/09/lavirgule.news/", languages=languages)
+    docs = load_from_folder("ppn_data/2023/11/09/lavirgule.news/", languages=languages)
     return convert_json_list_to_pandas(docs)
 
 def load_notrepays():
@@ -83,7 +83,7 @@ def load_notrepays():
     languages = ["ar", 'de', "en", "es", "fr", "it", "ua", "ru", "zh"]
     if type(languages) == str:
         languages = [languages]
-    docs = load_from_folder("oupn_data/2023/11/09/notrepays.today/", languages=languages)
+    docs = load_from_folder("ppn_data/2023/11/09/notrepays.today/", languages=languages)
     return convert_json_list_to_pandas(docs)
 
 def load_regular_fr():
@@ -97,12 +97,12 @@ def load_regular_en():
 def load_oupn(languages: List[str] = ["ar", 'de', "en", "es", "fr", "it", "ua", "ru", "zh"]):
     if type(languages) == str:
         languages = [languages]
-    rrn_docs = load_from_folder("oupn_data/2023/09/13/rrn.media/", languages=languages)
-    tribunalukraine_docs = load_from_folder_tribunal_ukraine("oupn_data/2023/11/09/tribunalukraine.info/", languages=languages)
-    waron_fakes_doc = load_from_folder("oupn_data/2023/11/09/waronfakes.com/", languages=languages)
+    rrn_docs = load_from_folder("ppn_data/2023/09/13/rrn.media/", languages=languages)
+    tribunalukraine_docs = load_from_folder_tribunal_ukraine("ppn_data/2023/11/09/tribunalukraine.info/", languages=languages)
+    waron_fakes_doc = load_from_folder("ppn_data/2023/11/09/waronfakes.com/", languages=languages)
     docs = rrn_docs + tribunalukraine_docs + waron_fakes_doc
     if "fr" in languages:
-        lavirgule_docs = load_from_folder("oupn_data/2023/11/09/lavirgule.news/", languages=["ar", 'de', "en", "es", "fr", "it", "ua", "ru", "zh"])
-        notrepays_docs = load_from_folder("oupn_data/2023/11/09/notrepays.today/", languages=["ar", 'de', "en", "es", "fr", "it", "ua", "ru", "zh"])
+        lavirgule_docs = load_from_folder("ppn_data/2023/11/09/lavirgule.news/", languages=["ar", 'de', "en", "es", "fr", "it", "ua", "ru", "zh"])
+        notrepays_docs = load_from_folder("ppn_data/2023/11/09/notrepays.today/", languages=["ar", 'de', "en", "es", "fr", "it", "ua", "ru", "zh"])
         docs = docs + lavirgule_docs + notrepays_docs
     return convert_json_list_to_pandas(docs)
