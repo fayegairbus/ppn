@@ -94,7 +94,7 @@ def load_regular_en():
 
 
 
-def load_oupn(languages: List[str] = ["ar", 'de', "en", "es", "fr", "it", "ua", "ru", "zh"]):
+def load_ppn(languages: List[str] = ["ar", 'de', "en", "es", "fr", "it", "ua", "ru", "zh"]):
     if type(languages) == str:
         languages = [languages]
     rrn_docs = load_from_folder("ppn_data/2023/09/13/rrn.media/", languages=languages)
